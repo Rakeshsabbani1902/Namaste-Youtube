@@ -66,19 +66,19 @@ const Head = () => {
 
 
   return (
-    <div className="grid grid-flow-col p-4 m-2 shadow-lg">
+    <div className="grid grid-flow-col p-5 m-2 shadow-lg">
         <div className='flex col-span-1'>
         <a href="/"><img onClick = {()=>toggleMenuHandler()} className="h-8 cursor-pointer" alt="menu" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwD9vnKk5oPrEHIthwjMIshbnqJgQDgdAvfA&s"/></a>
         <img  className="h-8 mx-2" alt="youtube-logo " src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-logo-icon.png"/>
         </div>
-        <div className='col-span-10 px-3' >
+        <div className='col-span-10 px-10' >
             <div>
-            <input className="w-1/2 border border-gray-400 rounded-l-full  h-8 "  value={searchQuery}  type="text"  onChange={(event)=>setSearchQuery(event.target.value)} onFocus={()=>setShowSuggestions(true)} onBlur={()=>setShowSuggestions(false)}/>
-            <button  className=" border border-gray-400 rounded-r-full bg-gray-100 w-1/12 h-8" onClick={()=>handleSearch()}>Search</button>
-            {showSuggestions && (<div className="fixed border p-2 m-0.25 border-gray-300 w-96 bg-gray-100 rounded-lg shadow-lg " >
+            <input className="px-5 w-1/2 border border-gray-400 p-2 rounded-l-full "  value={searchQuery}  type="text"  onChange={(event)=>setSearchQuery(event.target.value)} onFocus={()=>setShowSuggestions(true)} onBlur={()=>setShowSuggestions(false)}/>
+            <button  className=" border border-gray-400 px-5 py-2 rounded-r-full bg-gray-100" onClick={()=>handleSearch()}>Search</button>
+            {showSuggestions && (<div className="fixed bg-white py-2 px-2 w-[37rem] shadow-lg rounded-lg border border-gray-100 " >
                 <ul>
                     {suggestions.map(each=>( 
-                        <li key={each} className="py-1 px-2 shadow-sm hover:bg-gray-200" ><button >{each}</button></li>
+                        <li key={each} className="py-2 px-3 shadow-sm hover:bg-gray-100" ><button >{each}</button></li>
                         ))}
         
                 </ul>
